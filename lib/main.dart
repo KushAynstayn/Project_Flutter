@@ -9,6 +9,7 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      title: 'Project Flutter',
       theme: ThemeData(
         useMaterial3: false,
         primarySwatch: Colors.deepPurple),
