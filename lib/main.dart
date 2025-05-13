@@ -12,7 +12,17 @@ class ChatApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: false,
         primarySwatch: Colors.deepPurple),
-      home: Scaffold(
+      home: LoginPage(),
+    );
+  }
+}
+
+class LoginPage extends StatelessWidget {
+  const LoginPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
         appBar: AppBar(),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
@@ -21,8 +31,7 @@ class ChatApp extends StatelessWidget {
           },
         ),
         body: Text('Hello!'),
-      ),
-    );
+      );
   }
 }
 
