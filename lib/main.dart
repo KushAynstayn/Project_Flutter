@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:project_flutter/login_page.dart';
 
 void main() {
   runApp(ChatApp());
@@ -10,31 +11,13 @@ class ChatApp extends StatelessWidget {
     // TODO: implement build
     return MaterialApp(
       title: 'Project Flutter',
-      theme: ThemeData(
-        useMaterial3: false,
-        primarySwatch: Colors.deepPurple),
+      theme: ThemeData(useMaterial3: false, primarySwatch: Colors.deepPurple),
       home: LoginPage(),
     );
   }
 }
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return  Scaffold(
-        appBar: AppBar(),
-        drawer: Drawer(),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            print('Button clicked');
-          },
-        ),
-        body: Text('Hello!'),
-      );
-  }
-}
 
 
 
