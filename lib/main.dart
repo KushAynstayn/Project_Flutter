@@ -9,14 +9,16 @@ class ChatApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
     return MaterialApp(
+      theme: ThemeData(
+        useMaterial3: false,
+        primarySwatch: Colors.deepPurple),
       home: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.blue),
+        appBar: AppBar(),
         drawer: Drawer(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             print('Button clicked');
           },
-          backgroundColor: Colors.blue,
         ),
         body: Text('Hello!'),
       ),
