@@ -4,13 +4,12 @@ void main() {
   runApp(ChatApp());
 }
 
-class ChatApp extends StatelessWidget{
+class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    throw Text('Hello World!');
+    return MaterialApp(home: Text('Hello!'));
   }
-
 }
 
 
