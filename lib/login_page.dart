@@ -14,7 +14,26 @@ class LoginPage extends StatelessWidget {
         },
       ),
       // TODO: Add the text and image from the design
-      body: Text('Let\'s sign you in!'),
+      body: Column(
+        children: [
+        Text(
+         'Let\'s sign you in!', 
+         style: TextStyle(
+           fontSize: 30, 
+           color: Colors.indigo,
+           fontWeight: FontWeight.bold, letterSpacing: 0.5
+         ),
+       ),
+          Center(
+            child: Text(
+              'Welcome Back! \n You\'ve been missed!',
+              style: TextStyle(
+                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.purple
+                ),
+              ),
+          ),
+        ],
+      ),
     );
   }
 }
