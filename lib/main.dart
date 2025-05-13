@@ -8,7 +8,13 @@ class ChatApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(home: Scaffold(body: Text('Hello!')));
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(),
+        drawer: Drawer(),
+        body: Text('Hello!'),
+      ),
+    );
   }
 }
 
