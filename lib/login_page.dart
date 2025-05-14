@@ -24,14 +24,29 @@ class LoginPage extends StatelessWidget {
            fontWeight: FontWeight.bold, letterSpacing: 0.5
          ),
        ),
-          Center(
-            child: Text(
-              'Welcome Back! \n You\'ve been missed!',
-              style: TextStyle(
-                fontWeight: FontWeight.bold, fontSize: 20, color: Colors.purple
-                ),
+          Text(
+            'Welcome Back! \n You\'ve been missed!',
+            style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 20, color: Colors.purple
               ),
-          ),
+            ),
+            Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgzklBLtIALEETiwR7K_hxTE30VW9Wk4MRybHDt61LZqpGneMaXi0vJ449KUeEFwwpLY&usqp=CAU', height: 200,),
+            Container(
+              height: 150,
+              width: 150,
+              //child: FlutterLogo(),
+              padding: EdgeInsets.all(10),
+              margin: EdgeInsets.all(50),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  fit: BoxFit.fitHeight,
+                  image: NetworkImage(
+                    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgzklBLtIALEETiwR7K_hxTE30VW9Wk4MRybHDt61LZqpGneMaXi0vJ449KUeEFwwpLY&usqp=CAU')
+                    ),
+                color: Colors.lightBlue,
+                borderRadius: BorderRadius.circular(24)
+              ),
+            )
         ],
       ),
     );
