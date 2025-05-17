@@ -14,7 +14,7 @@ class ChatApp extends StatelessWidget {
     return MaterialApp(
       title: 'Project Flutter',
       theme: ThemeData(useMaterial3: false, primarySwatch: Colors.deepPurple),
-      home: CounterStateful(),
+      home: CounterStateful(buttonColor: Colors.blue,),
     );
   }
 }
