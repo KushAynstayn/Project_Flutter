@@ -52,6 +52,10 @@ class LoginPage extends StatelessWidget {
                 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgzklBLtIALEETiwR7K_hxTE30VW9Wk4MRybHDt61LZqpGneMaXi0vJ449KUeEFwwpLY&usqp=CAU',
                 height: 200,
               ),
+              SizedBox(
+                      height: 24,
+                    ),
+              
 
               Form(
                 key: _formkey,
@@ -101,6 +105,10 @@ class LoginPage extends StatelessWidget {
                   style: TextStyle(fontSize: 23, fontWeight: FontWeight.w300),
                 ),
               ),
+              SizedBox(
+                      height: 24,
+                    ),
+              
               InkWell(
                 splashColor: Colors.deepPurple,
                 onDoubleTap: () {
@@ -113,6 +121,7 @@ class LoginPage extends StatelessWidget {
                   // TODO: Navigate to browser
                   print('Link clicked');
                 },
+                
                 child: Column(
                   children: [
                     Text('Find us on'),
