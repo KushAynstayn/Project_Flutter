@@ -17,6 +17,8 @@ class ChatPage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
+              
+              Navigator.pop(context);
               print('Icon Pressed!');
             },
             icon: Icon(Icons.logout),
@@ -30,14 +32,14 @@ class ChatPage extends StatelessWidget {
               itemCount: 10,
               itemBuilder: (context, index) {
                 return ChatBubble(
-                  alignment: index % 2 == 0
-                  ? Alignment.centerLeft 
-                  : Alignment.centerRight,
+                  alignment:
+                      index % 2 == 0
+                          ? Alignment.centerLeft
+                          : Alignment.centerRight,
                   message: 'Hello, this is Aynstayn!',
                 );
               },
             ),
-            
           ),
           ChatInput(),
         ],
