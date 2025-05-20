@@ -18,6 +18,9 @@ class ChatApp extends StatelessWidget {
       home: //ChatPage(),
       LoginPage(),
       // CounterStateful(buttonColor: Colors.blue,),
+      routes: {
+        '/chat' : (context) => ChatPage()
+      },
     );
   }
 }
