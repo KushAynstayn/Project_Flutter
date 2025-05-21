@@ -3,7 +3,7 @@ import 'package:project_flutter/chat_page.dart';
 import 'package:project_flutter/utils/spaces.dart';
 import 'package:project_flutter/utils/textfield_styles.dart';
 import 'package:project_flutter/widgets/login_text_field.dart';
-
+import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -16,8 +16,9 @@ class LoginPage extends StatelessWidget {
       print(passwordController.text);
 
       Navigator.pushReplacementNamed(
-        context, '/chat', arguments: '${userNameController.text}'
-        
+        context,
+        '/chat',
+        arguments: '${userNameController.text}',
       );
       print('login successful!');
     } else {
@@ -27,6 +28,7 @@ class LoginPage extends StatelessWidget {
 
   final userNameController = TextEditingController();
   final passwordController = TextEditingController();
+  final _mainUrl = "https://kushaynstayn.com";
 
   @override
   Widget build(BuildContext context) {
@@ -59,10 +61,7 @@ class LoginPage extends StatelessWidget {
                   color: Colors.purple,
                 ),
               ),
-              Image.asset(
-                'assets/picimg.png',
-                height: 200,
-              ),
+              Image.asset('assets/picimg.png', height: 200),
               SizedBox(height: 24),
 
               Form(
@@ -82,16 +81,13 @@ class LoginPage extends StatelessWidget {
                         return null;
                       },
                       controller: userNameController,
-                     
                     ),
 
                     verticalSpacing(24),
                     LoginTextField(
                       hasAsterisks: true,
-                      controller: passwordController, 
+                      controller: passwordController,
                       hintText: 'Enter your password',
-                      
-                      
                     ),
                   ],
                 ),
@@ -109,25 +105,16 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: 24),
 
-              InkWell(
-                splashColor: Colors.deepPurple,
-                onDoubleTap: () {
-                  print('double tapped!');
-                },
-                onLongPress: () {
-                  print('onlong pressed!');
-                },
-                onTap: () {
+              GestureDetector(
+                onTap: () async {
                   // TODO: Navigate to browser
                   print('Link clicked');
+                  if (!await launchUrl(_mainUrl as Uri)) {
+                    throw Exception('Could not launch this!');
+                  }
                 },
 
-                child: Column(
-                  children: [
-                    Text('Find us on'),
-                    Text('https://kushaynstayn.com'),
-                  ],
-                ),
+                child: Column(children: [Text('Find us on'), Text(_mainUrl)]),
               ),
             ],
           ),
