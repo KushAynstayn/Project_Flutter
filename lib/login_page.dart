@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/chat_page.dart';
+import 'package:project_flutter/utils/spaces.dart';
 import 'package:project_flutter/utils/textfield_styles.dart';
 import 'package:project_flutter/widgets/login_text_field.dart';
+
 
 class LoginPage extends StatelessWidget {
   LoginPage({super.key});
@@ -57,8 +59,8 @@ class LoginPage extends StatelessWidget {
                   color: Colors.purple,
                 ),
               ),
-              Image.network(
-                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVgzklBLtIALEETiwR7K_hxTE30VW9Wk4MRybHDt61LZqpGneMaXi0vJ449KUeEFwwpLY&usqp=CAU',
+              Image.asset(
+                'assets/picimg.png',
                 height: 200,
               ),
               SizedBox(height: 24),
@@ -83,7 +85,7 @@ class LoginPage extends StatelessWidget {
                      
                     ),
 
-                    SizedBox(height: 24),
+                    verticalSpacing(24),
                     LoginTextField(
                       hasAsterisks: true,
                       controller: passwordController, 
@@ -94,7 +96,7 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 24),
+              verticalSpacing(24),
 
               ElevatedButton(
                 onPressed: () {
