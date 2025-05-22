@@ -3,6 +3,7 @@ import 'package:project_flutter/chat_page.dart';
 import 'package:project_flutter/utils/spaces.dart';
 import 'package:project_flutter/utils/textfield_styles.dart';
 import 'package:project_flutter/widgets/login_text_field.dart';
+import 'package:social_media_buttons/social_media_buttons.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class LoginPage extends StatelessWidget {
@@ -116,6 +117,18 @@ class LoginPage extends StatelessWidget {
 
                 child: Column(children: [Text('Find us on'), Text(_mainUrl)]),
               ),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SocialMediaButton.twitter(
+                   size: 20,
+                    color: Colors.blue,
+                    url: "https://twitter.com/pooja_bhaumik",),
+                  SocialMediaButton.linkedin(
+                    url: "https://linkedin.com/in/poojab26",)
+                ],)
+            
             ],
           ),
         ),
