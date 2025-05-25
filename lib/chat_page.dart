@@ -7,7 +7,7 @@ import 'package:project_flutter/widgets/chat_input.dart';
 import 'package:flutter/services.dart';
 
 class ChatPage extends StatefulWidget {
-  ChatPage({super.key});
+  const ChatPage({super.key});
 
   @override
   State<ChatPage> createState() => _ChatPageState();
@@ -22,16 +22,22 @@ class _ChatPageState extends State<ChatPage> {
 
     final List<dynamic> decodeList = jsonDecode(response) as List;
 
-    final List<ChatMessageEntity> _chatMessages = decodeList.map((listItem) {
+    final List<ChatMessageEntity> chatMessages = decodeList.map((listItem) {
       return ChatMessageEntity.fromJson(listItem);
     }).toList();
 
-    print(_chatMessages.length);
+    print(chatMessages.length);
 
     //final state of messages
     setState(() {
-      _messages = _chatMessages;
+      _messages = chatMessages;
     });
+  }
+
+
+  onMessageSent(ChatMessageEntity entity) {
+    _messages.add(entity);
+    setState(() {});
   }
 
   @override
@@ -78,7 +84,9 @@ class _ChatPageState extends State<ChatPage> {
               },
             ),
           ),
-          ChatInput(),
+          ChatInput(
+            onSubmit: onMessageSent,
+          ),
         ],
       ),
     );
