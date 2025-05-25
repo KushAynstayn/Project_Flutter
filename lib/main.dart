@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:project_flutter/chat_page.dart';
-import 'package:project_flutter/counter_stateful_demo.dart';
+import 'package:project_flutter/demo/counter_stateful_demo.dart';
 import 'package:project_flutter/login_page.dart';
 import 'package:project_flutter/widgets/chat_input.dart';
 
