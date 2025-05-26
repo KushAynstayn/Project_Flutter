@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:project_flutter/chat_page.dart';
 import 'package:project_flutter/demo/counter_stateful_demo.dart';
 import 'package:project_flutter/login_page.dart';
+import 'package:project_flutter/services/auth_service.dart';
 import 'package:project_flutter/widgets/chat_input.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(ChatApp());
+  runApp(Provider(
+    create: (BuildContext context) => AuthService(),
+    child: ChatApp(),
+  ));
 }
 
 class ChatApp extends StatelessWidget {

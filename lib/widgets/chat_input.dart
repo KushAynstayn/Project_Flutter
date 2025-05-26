@@ -1,6 +1,8 @@
 import 'package:project_flutter/models/chat_message_entity.dart';
+import 'package:project_flutter/services/auth_service.dart';
 import 'package:project_flutter/widgets/picker_body.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ChatInput extends StatefulWidget {
   final Function(ChatMessageEntity) onSubmit;
@@ -24,7 +26,7 @@ class _ChatInputState extends State<ChatInput> {
         text: chatMessageController.text,
         id: "244",
         createdAt: DateTime.now().millisecondsSinceEpoch,
-        author: Author(userName: 'aynstayn'));
+        author: Author(userName: context.read<AuthService>().getUserName()));
 
      //TODO: Check for image and append it to the chat object
     if (_selectedImageUrl.isNotEmpty) {
