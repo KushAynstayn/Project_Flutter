@@ -6,7 +6,9 @@ import 'package:project_flutter/services/auth_service.dart';
 import 'package:project_flutter/widgets/chat_input.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await AuthService.init();
   runApp(Provider(
     create: (BuildContext context) => AuthService(),
     child: ChatApp(),
