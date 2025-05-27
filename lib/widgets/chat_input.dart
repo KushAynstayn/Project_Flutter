@@ -19,14 +19,15 @@ class _ChatInputState extends State<ChatInput> {
 
   final chatMessageController = TextEditingController();
 
-  void onSendButtonPressed() {
+  void onSendButtonPressed() async {
+    String? userNameFromCache = await context.read<AuthService>().getUserName();
     print('ChatMessage: ${chatMessageController.text}');
     //TODO: Add this new message to the default list
     final newChatMessage = ChatMessageEntity(
         text: chatMessageController.text,
         id: "244",
         createdAt: DateTime.now().millisecondsSinceEpoch,
-        author: Author(userName: context.read<AuthService>().getUserName()));
+        author: Author(userName: userNameFromCache!));
 
      //TODO: Check for image and append it to the chat object
     if (_selectedImageUrl.isNotEmpty) {
